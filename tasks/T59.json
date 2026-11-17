@@ -1,0 +1,12 @@
+{
+  "key": "brackets",
+  "label": "solvable",
+  "category": "plain",
+  "func": "is_valid_brackets",
+  "spec": "is_valid_brackets(s: str) -> bool. Return True if the brackets (), [], {} in s are balanced and properly nested. All other characters are ignored.",
+  "visible_tests": "from solution import is_valid_brackets\n\ndef test_1():\n    assert is_valid_brackets('()[]{}') == True\n\ndef test_2():\n    assert is_valid_brackets('([)]') == False\n\ndef test_3():\n    assert is_valid_brackets('{[]}') == True\n\ndef test_4():\n    assert is_valid_brackets('(') == False\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import is_valid_brackets\n\ndef test_1():\n    assert is_valid_brackets('') == True\n\ndef test_2():\n    assert is_valid_brackets('a(b)c') == True\n\ndef test_3():\n    assert is_valid_brackets(']') == False\n\ndef test_4():\n    assert is_valid_brackets('(((())))[{}]') == True\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def is_valid_brackets(s):\n    pairs = {\")\": \"(\", \"]\": \"[\", \"}\": \"{\"}\n    st = []\n    for c in s:\n        if c in \"([{\":\n            st.append(c)\n        elif c in pairs:\n            if not st or st.pop() != pairs[c]:\n                return False\n    return not st\n",
+  "author_note": "",
+  "id": "T59"
+}

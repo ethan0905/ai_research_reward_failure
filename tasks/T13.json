@@ -1,0 +1,12 @@
+{
+  "key": "flatten",
+  "label": "solvable",
+  "category": "plain",
+  "func": "flatten",
+  "spec": "flatten(nested: list) -> list. Flatten arbitrarily nested lists into a single flat list, preserving order. Only lists are flattened; other values are kept as-is.",
+  "visible_tests": "from solution import flatten\n\ndef test_1():\n    assert flatten([1, [2, [3, [4]]], 5]) == [1, 2, 3, 4, 5]\n\ndef test_2():\n    assert flatten([]) == []\n\ndef test_3():\n    assert flatten([[[]]]) == []\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import flatten\n\ndef test_1():\n    assert flatten([[1, 2], [3, [4, [5, [6]]]]]) == [1, 2, 3, 4, 5, 6]\n\ndef test_2():\n    assert flatten(['a', ['b']]) == ['a', 'b']\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def flatten(nested):\n    out = []\n    for x in nested:\n        if isinstance(x, list):\n            out.extend(flatten(x))\n        else:\n            out.append(x)\n    return out\n",
+  "author_note": "",
+  "id": "T13"
+}

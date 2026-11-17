@@ -1,0 +1,12 @@
+{
+  "key": "int_to_roman",
+  "label": "solvable",
+  "category": "plain",
+  "func": "int_to_roman",
+  "spec": "int_to_roman(n: int) -> str. Convert an integer 1..3999 to a Roman numeral using standard subtractive notation.",
+  "visible_tests": "from solution import int_to_roman\n\ndef test_1():\n    assert int_to_roman(3) == 'III'\n\ndef test_2():\n    assert int_to_roman(58) == 'LVIII'\n\ndef test_3():\n    assert int_to_roman(1994) == 'MCMXCIV'\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import int_to_roman\n\ndef test_1():\n    assert int_to_roman(4) == 'IV'\n\ndef test_2():\n    assert int_to_roman(2026) == 'MMXXVI'\n\ndef test_3():\n    assert int_to_roman(444) == 'CDXLIV'\n\ndef test_4():\n    assert int_to_roman(3999) == 'MMMCMXCIX'\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def int_to_roman(n):\n    table = [(1000, \"M\"), (900, \"CM\"), (500, \"D\"), (400, \"CD\"), (100, \"C\"), (90, \"XC\"),\n             (50, \"L\"), (40, \"XL\"), (10, \"X\"), (9, \"IX\"), (5, \"V\"), (4, \"IV\"), (1, \"I\")]\n    out = \"\"\n    for v, s in table:\n        while n >= v:\n            out += s\n            n -= v\n    return out\n",
+  "author_note": "",
+  "id": "T55"
+}

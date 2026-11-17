@@ -1,0 +1,12 @@
+{
+  "key": "parse_duration",
+  "label": "solvable",
+  "category": "plain",
+  "func": "parse_duration",
+  "spec": "parse_duration(s: str) -> int. Parse a duration like \"1h30m15s\" into total seconds. Each of the components <int>h, <int>m, <int>s is optional, but those present appear in that order.",
+  "visible_tests": "from solution import parse_duration\n\ndef test_1():\n    assert parse_duration('1h30m15s') == 5415\n\ndef test_2():\n    assert parse_duration('45s') == 45\n\ndef test_3():\n    assert parse_duration('2h') == 7200\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import parse_duration\n\ndef test_1():\n    assert parse_duration('1h1s') == 3601\n\ndef test_2():\n    assert parse_duration('10m') == 600\n\ndef test_3():\n    assert parse_duration('0s') == 0\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def parse_duration(s):\n    import re\n    m = re.fullmatch(r\"(?:(\\d+)h)?(?:(\\d+)m)?(?:(\\d+)s)?\", s)\n    h, mi, se = (int(x) if x else 0 for x in m.groups())\n    return h * 3600 + mi * 60 + se\n",
+  "author_note": "",
+  "id": "T35"
+}

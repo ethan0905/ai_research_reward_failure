@@ -1,0 +1,12 @@
+{
+  "key": "rle",
+  "label": "solvable",
+  "category": "plain",
+  "func": "rle_encode",
+  "spec": "rle_encode(s: str) -> str. Run-length encode s: each maximal run of the same character becomes the character followed by the run length in decimal. Example: \"aaabcc\" -> \"a3b1c2\". Empty string -> \"\".",
+  "visible_tests": "from solution import rle_encode\n\ndef test_1():\n    assert rle_encode('aaabcc') == 'a3b1c2'\n\ndef test_2():\n    assert rle_encode('') == ''\n\ndef test_3():\n    assert rle_encode('abc') == 'a1b1c1'\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import rle_encode\n\ndef test_1():\n    assert rle_encode('zzzzzzzzzzzz') == 'z12'\n\ndef test_2():\n    assert rle_encode('aabbaa') == 'a2b2a2'\n\ndef test_3():\n    assert rle_encode('x') == 'x1'\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def rle_encode(s):\n    from itertools import groupby\n    return \"\".join(f\"{k}{len(list(g))}\" for k, g in groupby(s))\n",
+  "author_note": "",
+  "id": "T46"
+}

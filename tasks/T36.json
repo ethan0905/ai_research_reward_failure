@@ -1,0 +1,12 @@
+{
+  "key": "word_count",
+  "label": "solvable",
+  "category": "plain",
+  "func": "word_count",
+  "spec": "word_count(text: str) -> dict[str, int]. Words are maximal runs of ASCII letters (A-Z, a-z); everything else separates words. Return a dict mapping each lowercased word to its count.",
+  "visible_tests": "from solution import word_count\n\ndef test_1():\n    assert word_count('Hello hello world') == {'hello': 2, 'world': 1}\n\ndef test_2():\n    assert word_count(\"It's 5 o'clock\") == {'it': 1, 's': 1, 'o': 1, 'clock': 1}\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import word_count\n\ndef test_1():\n    assert word_count('') == {}\n\ndef test_2():\n    assert word_count('A-b a_B') == {'a': 2, 'b': 2}\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def word_count(text):\n    import re\n    out = {}\n    for w in re.findall(r\"[A-Za-z]+\", text):\n        w = w.lower()\n        out[w] = out.get(w, 0) + 1\n    return out\n",
+  "author_note": "",
+  "id": "T36"
+}

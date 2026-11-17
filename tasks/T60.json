@@ -1,0 +1,12 @@
+{
+  "key": "days_between",
+  "label": "solvable",
+  "category": "plain",
+  "func": "days_between",
+  "spec": "days_between(d1: str, d2: str) -> int. Dates are ISO \"YYYY-MM-DD\" (proleptic Gregorian). Return the absolute number of days between them.",
+  "visible_tests": "from solution import days_between\n\ndef test_1():\n    assert days_between('2024-01-01', '2024-03-01') == 60\n\ndef test_2():\n    assert days_between('2020-02-28', '2020-03-01') == 2\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import days_between\n\ndef test_1():\n    assert days_between('2023-12-31', '2023-01-01') == 364\n\ndef test_2():\n    assert days_between('2000-01-01', '2000-01-01') == 0\n\ndef test_3():\n    assert days_between('1999-12-31', '2000-12-31') == 366\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def days_between(d1, d2):\n    from datetime import date\n    return abs((date.fromisoformat(d1) - date.fromisoformat(d2)).days)\n",
+  "author_note": "",
+  "id": "T60"
+}

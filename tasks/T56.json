@@ -1,0 +1,12 @@
+{
+  "key": "roman_to_int",
+  "label": "solvable",
+  "category": "plain",
+  "func": "roman_to_int",
+  "spec": "roman_to_int(s: str) -> int. Convert a valid Roman numeral (1..3999, standard subtractive notation) to an integer.",
+  "visible_tests": "from solution import roman_to_int\n\ndef test_1():\n    assert roman_to_int('III') == 3\n\ndef test_2():\n    assert roman_to_int('LVIII') == 58\n\ndef test_3():\n    assert roman_to_int('MCMXCIV') == 1994\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import roman_to_int\n\ndef test_1():\n    assert roman_to_int('IV') == 4\n\ndef test_2():\n    assert roman_to_int('MMXXVI') == 2026\n\ndef test_3():\n    assert roman_to_int('CDXLIV') == 444\n\ndef test_4():\n    assert roman_to_int('IX') == 9\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def roman_to_int(s):\n    v = {\"I\": 1, \"V\": 5, \"X\": 10, \"L\": 50, \"C\": 100, \"D\": 500, \"M\": 1000}\n    total = 0\n    for i, c in enumerate(s):\n        if i + 1 < len(s) and v[c] < v[s[i + 1]]:\n            total -= v[c]\n        else:\n            total += v[c]\n    return total\n",
+  "author_note": "",
+  "id": "T56"
+}
