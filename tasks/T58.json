@@ -1,0 +1,12 @@
+{
+  "key": "receipt_number",
+  "label": "solvable",
+  "category": "plain",
+  "func": "valid_receipt_number",
+  "spec": "valid_receipt_number(s: str) -> bool. A USCIS receipt number is exactly 13 characters: a 3-letter uppercase service-center code from {EAC, WAC, LIN, SRC, NBC, MSC, IOE, YSC} followed by exactly 10 digits. No spaces or other characters. Return whether s is valid.",
+  "visible_tests": "from solution import valid_receipt_number\n\ndef test_1():\n    assert valid_receipt_number('EAC2190000001') == True\n\ndef test_2():\n    assert valid_receipt_number('ABC2190000001') == False\n\ndef test_3():\n    assert valid_receipt_number('LIN12345') == False\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import valid_receipt_number\n\ndef test_1():\n    assert valid_receipt_number('ioe0912345678') == False\n\ndef test_2():\n    assert valid_receipt_number('IOE0912345678') == True\n\ndef test_3():\n    assert valid_receipt_number('WAC21900000012') == False\n\ndef test_4():\n    assert valid_receipt_number('YSC 190000001') == False\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def valid_receipt_number(s):\n    import re\n    return re.fullmatch(r\"(EAC|WAC|LIN|SRC|NBC|MSC|IOE|YSC)[0-9]{10}\", s) is not None\n",
+  "author_note": "",
+  "id": "T58"
+}

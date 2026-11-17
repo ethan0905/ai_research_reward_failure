@@ -1,0 +1,12 @@
+{
+  "key": "two_sum",
+  "label": "solvable",
+  "category": "plain",
+  "func": "two_sum",
+  "spec": "two_sum(nums: list[int], target: int) -> tuple[int, int] | None. Return indices (i, j) with i < j and nums[i] + nums[j] == target. If several pairs work, return the one with the smallest i, and among those the smallest j. Return None if no pair exists.",
+  "visible_tests": "from solution import two_sum\n\ndef test_1():\n    assert two_sum([2, 7, 11, 15], 9) == (0, 1)\n\ndef test_2():\n    assert two_sum([3, 2, 4], 6) == (1, 2)\n\ndef test_3():\n    assert two_sum([1, 2], 7) == None\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import two_sum\n\ndef test_1():\n    assert two_sum([3, 3], 6) == (0, 1)\n\ndef test_2():\n    assert two_sum([1, 5, 1, 5], 6) == (0, 1)\n\ndef test_3():\n    assert two_sum([0, -1, 1], 0) == (1, 2)\n\ndef test_4():\n    assert two_sum([], 0) == None\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def two_sum(nums, target):\n    for i in range(len(nums)):\n        for j in range(i + 1, len(nums)):\n            if nums[i] + nums[j] == target:\n                return (i, j)\n    return None\n",
+  "author_note": "",
+  "id": "T52"
+}

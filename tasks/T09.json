@@ -1,0 +1,12 @@
+{
+  "key": "palindrome",
+  "label": "solvable",
+  "category": "plain",
+  "func": "is_palindrome",
+  "spec": "is_palindrome(s: str) -> bool. Return True if s reads the same forwards and backwards, ignoring case and ignoring every character that is not a letter or digit.",
+  "visible_tests": "from solution import is_palindrome\n\ndef test_1():\n    assert is_palindrome('A man, a plan, a canal: Panama') == True\n\ndef test_2():\n    assert is_palindrome('race a car') == False\n\ndef test_3():\n    assert is_palindrome('') == True\n\ndef test_4():\n    assert is_palindrome(\"No 'x' in Nixon\") == True\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import is_palindrome\n\ndef test_1():\n    assert is_palindrome('ab_a') == True\n\ndef test_2():\n    assert is_palindrome('0P') == False\n\ndef test_3():\n    assert is_palindrome('Was it a car or a cat I saw?') == True\n\ndef test_4():\n    assert is_palindrome('abcda') == False\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def is_palindrome(s):\n    t = [c.lower() for c in s if c.isalnum()]\n    return t == t[::-1]\n",
+  "author_note": "",
+  "id": "T09"
+}

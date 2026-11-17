@@ -1,0 +1,28 @@
+model=claude-sonnet-5-5 N=8 tasks=60 todo=476 already_logged=4
+MAX_USD=30.00  worst-case per call=$0.126  worst-case for todo=$59.98
+spent so far (ledger): $0.02
+  20/476 done  ok=20 err=0  spent=$0.09
+  40/476 done  ok=40 err=0  spent=$0.20
+  60/476 done  ok=60 err=0  spent=$0.29
+  80/476 done  ok=80 err=0  spent=$0.34
+  100/476 done  ok=100 err=0  spent=$0.39
+  120/476 done  ok=120 err=0  spent=$0.50
+  140/476 done  ok=140 err=0  spent=$0.58
+  160/476 done  ok=160 err=0  spent=$0.67
+  180/476 done  ok=180 err=0  spent=$0.73
+  200/476 done  ok=200 err=0  spent=$0.81
+  220/476 done  ok=220 err=0  spent=$0.90
+  240/476 done  ok=240 err=0  spent=$0.98
+  260/476 done  ok=260 err=0  spent=$1.08
+  280/476 done  ok=280 err=0  spent=$1.16
+  300/476 done  ok=300 err=0  spent=$1.23
+  320/476 done  ok=320 err=0  spent=$1.31
+  340/476 done  ok=340 err=0  spent=$1.43
+  360/476 done  ok=360 err=0  spent=$1.52
+  380/476 done  ok=380 err=0  spent=$1.57
+  400/476 done  ok=400 err=0  spent=$1.66
+  420/476 done  ok=420 err=0  spent=$1.75
+  440/476 done  ok=440 err=0  spent=$1.82
+  460/476 done  ok=460 err=0  spent=$1.90
+  476/476 done  ok=476 err=0  spent=$1.95
+finished: ok=476 errors=0 spent_total=$1.95

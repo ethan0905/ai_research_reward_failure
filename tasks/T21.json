@@ -1,0 +1,12 @@
+{
+  "key": "lcp",
+  "label": "solvable",
+  "category": "plain",
+  "func": "longest_common_prefix",
+  "spec": "longest_common_prefix(strs: list[str]) -> str. Return the longest common prefix of all strings; \"\" for an empty list.",
+  "visible_tests": "from solution import longest_common_prefix\n\ndef test_1():\n    assert longest_common_prefix(['flower', 'flow', 'flight']) == 'fl'\n\ndef test_2():\n    assert longest_common_prefix(['dog', 'racecar', 'car']) == ''\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import longest_common_prefix\n\ndef test_1():\n    assert longest_common_prefix([]) == ''\n\ndef test_2():\n    assert longest_common_prefix(['a']) == 'a'\n\ndef test_3():\n    assert longest_common_prefix(['abc', 'abc']) == 'abc'\n\ndef test_4():\n    assert longest_common_prefix(['ab', 'a']) == 'a'\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def longest_common_prefix(strs):\n    if not strs:\n        return \"\"\n    p = strs[0]\n    for s in strs[1:]:\n        while not s.startswith(p):\n            p = p[:-1]\n    return p\n",
+  "author_note": "",
+  "id": "T21"
+}

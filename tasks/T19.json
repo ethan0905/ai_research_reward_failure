@@ -1,0 +1,12 @@
+{
+  "key": "snake_to_camel",
+  "label": "solvable",
+  "category": "plain",
+  "func": "snake_to_camel",
+  "spec": "snake_to_camel(s: str) -> str. Convert snake_case to camelCase: split on underscores, drop empty parts (so leading, trailing and repeated underscores are ignored), keep the first part as-is, and capitalize the first letter of each following part. \"\" -> \"\".",
+  "visible_tests": "from solution import snake_to_camel\n\ndef test_1():\n    assert snake_to_camel('hello_world') == 'helloWorld'\n\ndef test_2():\n    assert snake_to_camel('a') == 'a'\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import snake_to_camel\n\ndef test_1():\n    assert snake_to_camel('_private_var_') == 'privateVar'\n\ndef test_2():\n    assert snake_to_camel('x__y') == 'xY'\n\ndef test_3():\n    assert snake_to_camel('already') == 'already'\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def snake_to_camel(s):\n    parts = [p for p in s.split(\"_\") if p]\n    if not parts:\n        return \"\"\n    return parts[0] + \"\".join(p[:1].upper() + p[1:] for p in parts[1:])\n",
+  "author_note": "",
+  "id": "T19"
+}

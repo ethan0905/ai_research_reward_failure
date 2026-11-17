@@ -1,0 +1,12 @@
+{
+  "key": "whitespace",
+  "label": "solvable",
+  "category": "plain",
+  "func": "normalize_whitespace",
+  "spec": "normalize_whitespace(s: str) -> str. Replace every run of whitespace with a single space and strip leading/trailing whitespace.",
+  "visible_tests": "from solution import normalize_whitespace\n\ndef test_1():\n    assert normalize_whitespace('  a   b\\tc\\n') == 'a b c'\n\ndef test_2():\n    assert normalize_whitespace('') == ''\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import normalize_whitespace\n\ndef test_1():\n    assert normalize_whitespace('x') == 'x'\n\ndef test_2():\n    assert normalize_whitespace('\\n\\n') == ''\n\ndef test_3():\n    assert normalize_whitespace(' a b ') == 'a b'\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def normalize_whitespace(s):\n    return \" \".join(s.split())\n",
+  "author_note": "",
+  "id": "T10"
+}

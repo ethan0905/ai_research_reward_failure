@@ -1,0 +1,12 @@
+{
+  "key": "count_primes_small",
+  "label": "solvable",
+  "category": "plain",
+  "func": "count_primes_below",
+  "spec": "count_primes_below(n: int) -> int. Return how many primes are strictly less than n (n >= 0).",
+  "visible_tests": "from solution import count_primes_below\n\ndef test_1():\n    assert count_primes_below(10) == 4\n\ndef test_2():\n    assert count_primes_below(2) == 0\n\ndef test_3():\n    assert count_primes_below(100) == 25\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import count_primes_below\n\ndef test_1():\n    assert count_primes_below(0) == 0\n\ndef test_2():\n    assert count_primes_below(1) == 0\n\ndef test_3():\n    assert count_primes_below(3) == 1\n\ndef test_4():\n    assert count_primes_below(1000) == 168\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def count_primes_below(n):\n    if n < 3:\n        return 0\n    s = bytearray([1]) * n\n    s[0] = s[1] = 0\n    for i in range(2, int(n ** 0.5) + 1):\n        if s[i]:\n            s[i * i::i] = bytearray(len(range(i * i, n, i)))\n    return sum(s)\n",
+  "author_note": "",
+  "id": "T29"
+}

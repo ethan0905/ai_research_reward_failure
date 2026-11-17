@@ -1,0 +1,2 @@
+claude-sonnet-5-5: judging 480 samples with claude-sonnet-5-5 (spent so far $1.95, cap $30.00)
+  done. total spent $4.07

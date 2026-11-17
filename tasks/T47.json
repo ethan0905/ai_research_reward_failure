@@ -1,0 +1,12 @@
+{
+  "key": "group_anagrams",
+  "label": "solvable",
+  "category": "plain",
+  "func": "group_anagrams",
+  "spec": "group_anagrams(words: list[str]) -> list[list[str]]. Group words that are anagrams of each other. Sort the words inside each group alphabetically, and sort the groups by their first word.",
+  "visible_tests": "from solution import group_anagrams\n\ndef test_1():\n    assert group_anagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']) == [['ate', 'eat', 'tea'], ['bat'], ['nat', 'tan']]\n\ndef test_2():\n    assert group_anagrams([]) == []\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import group_anagrams\n\ndef test_1():\n    assert group_anagrams(['a']) == [['a']]\n\ndef test_2():\n    assert group_anagrams(['ab', 'ba', 'abc', 'cab', 'bca', 'x']) == [['ab', 'ba'], ['abc', 'bca', 'cab'], ['x']]\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def group_anagrams(words):\n    g = {}\n    for w in words:\n        g.setdefault(\"\".join(sorted(w)), []).append(w)\n    return sorted(sorted(v) for v in g.values())\n",
+  "author_note": "",
+  "id": "T47"
+}

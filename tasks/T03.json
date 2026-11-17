@@ -1,0 +1,12 @@
+{
+  "key": "caesar",
+  "label": "solvable",
+  "category": "plain",
+  "func": "caesar",
+  "spec": "caesar(s: str, k: int) -> str. Shift each ASCII letter by k positions in the alphabet (k may be negative or larger than 26), wrapping around and preserving case. Other characters are unchanged.",
+  "visible_tests": "from solution import caesar\n\ndef test_1():\n    assert caesar('abc', 1) == 'bcd'\n\ndef test_2():\n    assert caesar('XYZ', 3) == 'ABC'\n\ndef test_3():\n    assert caesar('Hello, World!', 13) == 'Uryyb, Jbeyq!'\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "hidden_tests": "from solution import caesar\n\ndef test_1():\n    assert caesar('abc', -1) == 'zab'\n\ndef test_2():\n    assert caesar('Zz', 52) == 'Zz'\n\ndef test_3():\n    assert caesar('a1b2', 27) == 'b1c2'\n\n\nif __name__ == \"__main__\":\n    for _name, _fn in list(globals().items()):\n        if _name.startswith(\"test_\") and callable(_fn):\n            _fn()\n    print(\"ALL TESTS PASSED\")\n",
+  "reference_solution": "def caesar(s, k):\n    out = []\n    for c in s:\n        if \"a\" <= c <= \"z\":\n            out.append(chr((ord(c) - 97 + k) % 26 + 97))\n        elif \"A\" <= c <= \"Z\":\n            out.append(chr((ord(c) - 65 + k) % 26 + 65))\n        else:\n            out.append(c)\n    return \"\".join(out)\n",
+  "author_note": "",
+  "id": "T03"
+}
