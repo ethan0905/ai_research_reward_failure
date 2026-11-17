@@ -56,6 +56,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python judge.py                    # LLM judge on every sample (API)
 .venv/bin/python label.py                    # YOU hand-label 30 samples (judge output hidden)
 .venv/bin/python analyze.py                  # results/tables.md
+.venv/bin/python blog/build_post.py          # blog/post.md (tables pasted verbatim from results/tables.md)
 ```
 Everything after `run.py` can be recomputed from `data/raw/*.jsonl` (and `data/judge`, `data/labels`).
 Sampling itself is not reproducible: the API has no seed and this model does not accept a
